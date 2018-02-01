@@ -28,15 +28,24 @@ class WeatherChecker(object):
         self._city = self._WUNDERGROUND_CITY
 
     def _get_today_weekday(self):
+        """
+        Retrieve the today weekday name.
+        """
         day_initials = ['Mon', 'Tues', 'Wednes', 'Thurs', 'Fri', 'Satur',
                         'Sun']
         weekday_name = day_initials[datetime.datetime.today().weekday()] + 'day'
         return weekday_name
 
     def _avg(self, list):
+        """
+        Compute the average of a list of numerics.
+        """
         return sum(list, 0.0) / len(list)
 
     def get_today_rain_probability_avg(self):
+        """
+        Compute the average for today's pop.
+        """
         url = self._WUNDERGROUND_ENDPOINT_TEMPLATE.format(self._api_key,
                 self._state, self._city)
         res = requests.get(url)
