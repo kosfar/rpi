@@ -11,7 +11,7 @@ import logging
 import datetime
 import pprint
 
-logging.basicConfig()
+logging.basicConfig(format='%(message)s')
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
